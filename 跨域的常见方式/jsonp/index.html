@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jsonp的请求说明</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+<body>
+    <h2>跨域产生的原因？浏览器的同源策略</h2>
+    <h2>jsonp的原理什么？</h2>
+    <p>jsonp的原理是利用scirpt标签中的src属性不存在同源限制</p>
+    <p>jsonp的核心就是后台返回一个函数的调用，同时并传入后台的数据</p>
+    <button class="btn">发送ajax请求</button>
+    <script>
+        function callback (data) {
+            console.log(data)
+        }
+        // fn(66666)
+    </script>
+    <script src="http://127.0.0.1/jsonptest?cb=callback"></script>
+</body>
+</html>
+<script>
+/* $('.btn').on('click', () => {
+    $.ajax({
+        url: 'http://127.0.0.1/getusers',
+        success (res) {
+            console.log(res)
+        }
+    })
+}) */
+</script>

@@ -1,0 +1,146 @@
+@font-face {
+  font-family: "iconfont";
+  src: url('../assets/mui/iconfont/iconfont.ttf?t=1517033951890') format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-daohanggouwuche:before {
+  content: "\e607";
+}
+* {
+  margin: 0;
+  padding: 0;
+  touch-action: none;
+}
+ul {
+  list-style: none;
+}
+/* 头部 */
+.my-header.mui-bar {
+  background-color: #006699;
+}
+.my-header.mui-bar h1,
+.my-header.mui-bar a {
+  color: #fff;
+}
+/* 底部样式 */
+.my-footer.mui-bar {
+  background-color: #006699;
+}
+.my-footer.mui-bar a {
+  color: #fff;
+}
+.my-footer.mui-bar .mui-active {
+  color: darkorange;
+}
+.mui-content {
+  background: #fff;
+}
+/* 导航链接样式 */
+.nov-link {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+.nov-link a {
+  float: left;
+  width: 33.333%;
+}
+.nov-link a img {
+  width: 100%;
+  display: inline-block;
+}
+/* 品牌区样式 */
+.product .title {
+  width: 100%;
+  padding: 0 10px;
+  text-align: center;
+}
+.product .title a {
+  width: 100%;
+  display: block;
+}
+.product .title a img {
+  width: 100%;
+  display: block;
+}
+.product ul {
+  margin-top: 5px;
+  width: 100%;
+  list-style: none;
+  overflow: hidden;
+  padding: 5px;
+}
+.product ul li {
+  width: 25%;
+  float: left;
+}
+.product ul li a {
+  width: 100%;
+  display: block;
+}
+.product ul li a img {
+  width: 100%;
+  display: block;
+}
+/* 分类专区 */
+.main {
+  padding: 5px 10px 5px ;
+}
+.main img {
+  width: 100%;
+}
+.main ul {
+  width: 100%;
+  overflow: hidden;
+}
+.main ul li {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+.main ul li a {
+  box-shadow: 0 0 4px #ccc;
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding: 5px;
+}
+.main ul li a img {
+  width: 100%;
+  display: block;
+}
+.main ul li a .name {
+  padding: 2px;
+  color: #ccc;
+  font-size: 14px;
+  overflow: hidden;
+  text-align: center;
+  line-height: 18px;
+  height: 38px;
+  display: block;
+}
+.main ul li a p > span:nth-child(1) {
+  color: red;
+}
+.main ul li a p > span:nth-child(2) {
+  color: #8f8f94;
+  text-decoration: line-through;
+}
+.main ul li a .buy_now {
+  width: 80px;
+  height: 30px;
+  text-align: center;
+  display: block;
+  background-color: #006699;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 30px;
+  margin: 0 auto 5px auto;
+}

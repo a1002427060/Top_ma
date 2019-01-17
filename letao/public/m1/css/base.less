@@ -1,0 +1,156 @@
+@font-face {
+    font-family: "iconfont";
+    src:
+        url('../assets/mui/iconfont/iconfont.ttf?t=1517033951890') format('truetype');
+    
+  }
+  
+  .iconfont {
+    font-family:"iconfont" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-daohanggouwuche:before { content: "\e607"; }
+*{
+    margin: 0;
+    padding: 0;
+    touch-action: none; 
+}
+ul{
+    list-style: none;
+}
+/* 头部 */
+.my-header.mui-bar{
+    background-color:#006699;
+    h1,a{
+        color: #fff;
+    }
+}
+/* 底部样式 */
+.my-footer.mui-bar{
+    background-color:#006699;
+    a{
+        color: #fff;
+    }
+    .mui-active{
+        color: darkorange;
+    }
+}
+.mui-content{
+    background: #fff;
+}
+/* 导航链接样式 */
+.nov-link{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    a{
+        float: left;
+        width: 33.333%;
+        img{
+            width: 100%;
+            display: inline-block;
+        }
+    }
+}
+/* 品牌区样式 */
+.product{
+    .title{
+        width: 100%;
+        padding: 0 10px;
+        text-align: center;
+        a{
+            width: 100%;
+            display: block;
+            img{
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+    ul{
+        margin-top: 5px;
+        width:100%;
+        list-style:none;
+        overflow: hidden;
+        padding: 5px;
+        li{
+            width: 25%;
+            float: left;
+            
+         a{
+             width:100%;
+             display: block;
+           
+             img{
+                 width:100%;
+                 display: block;
+             }
+         }
+        }
+    }
+
+}
+/* 分类专区 */
+.main{
+    padding:5px 10px 5px ;  
+
+    img{
+        width: 100%;
+    }
+    ul{
+        width: 100%;
+        overflow: hidden;
+
+        li{
+            float: left;
+            width: 50%;
+            padding: 5px;
+           
+            a{
+                box-shadow: 0 0 4px #ccc;    
+                width: 100%;
+                display: block;
+                text-align: center;
+                padding: 5px;
+                img{
+                    width: 100%;
+                    display: block;
+                }
+                .name{
+                    padding: 2px;
+                    color: #ccc;
+                    font-size: 14px;
+                    overflow: hidden;
+                    text-align: center;
+                    line-height: 18px;  
+                    height: 38px;
+                    display: block;
+                }
+                p>span:nth-child(1){
+                    color:red;
+                }
+                p>span:nth-child(2){
+                    color:#8f8f94;
+                    text-decoration: line-through;
+                }
+                .buy_now{
+                    display: block;
+                    width: 80px;
+                    height: 30px;
+                    text-align: center;
+                    display: block;
+                    background-color: #006699;
+                    color: #fff;
+                    border-radius: 5px;
+                    font-size: 12px;  
+                    line-height: 30px;
+                    margin: 0 auto 5px auto;
+                }
+            }
+        }
+    }
+}
