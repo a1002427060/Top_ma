@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../vue.js"></script>
+    <script src="../moment.js"></script>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        .list{
+            border :1px solid #000;
+        }
+        .list th,
+        .list td{
+                background-color: skyblue;
+                border-right: 1px solid #000;
+                height: 50px;
+                width: 300px;
+                padding: 0 50px;
+                text-align: center;
+            }
+        </style>
+</head>
+
+<body>
+    <div id="app">
+        <h3>添加商品列表</h3>
+        <form action="">
+            <label for="">
+                id:
+                <input type="text" v-model="id">
+            </label>
+            name:
+            <input type="text" v-model="name" @keyup.f2="add">
+            </label>
+            <input type="button" value="添加" @click="add">
+            <label for="">
+                搜索关键字
+                <input type="text" v-model="keyword" v-focus>
+            </label>
+        </form>
+        <hr>
+        <table>
+            <thead>
+                <tr class="list">
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Ctime</th>
+                    <th>Operation</th>
+                </tr>
+            </thead>
+            <thead>
+                <tr class="list" v-for="item in search(keyword)" :key="item.id">
+                    <td>{{ item.id}}</td>
+                    <td>{{ item.name}}</td>
+                    <td>{{ item.ctime | dataFormat()}}</td>
+                    <td>
+                        <a href="" @click.prevent="del(item.id)">删除</a>
+                    </td>
+
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <script>
+        Vue.filter("dataFormat", function (dateStr, pattern="YYYY-MM-DD hh:mm:ss") {
+            // moment().format("YYYY-MM-DD hh:mm:ss");
+            return moment(dateStr).format(pattern)
+        })
+
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                id: "",
+                name: "",
+                keyword: "",
+                list: [
+                    { id: 1, name: "宝马", ctime: new Date() },
+
+                ]
+            },
+            methods: {
+                add() {
+                    var car = { id: this.id, name: this.name, ctime: new Date() }
+                    this.list.push(car);
+                    this.id = this.name = "";
+                },
+                del(id) {
+                    var index = this.list.findIndex(item => {
+                        if (item.id = this.id) return true
+                    })
+                    this.list.splice(index, 1)
+                },
+                search(keyword) {
+                    return this.list.filter(item => {
+                        if (item.name.includes(keyword)) {
+                            return item
+                        }
+                    })
+                }
+            },
+            directives: {
+                "focus": {
+                    inserted: function (el) {  // inserted 表示元素 插入到DOM中的时候，会执行 inserted 函数【触发1次】
+                        el.focus()
+                        // 和JS行为有关的操作，最好在 inserted 中去执行，放置 JS行为不生效
+                    },
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>
