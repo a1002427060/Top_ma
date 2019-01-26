@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+    <script src="../day4/lib/vue-router-3.0.1.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model = "firstname">
+        <input type="text" v-model = "lastname">
+        <input type="text" v-model ="fullname">
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            firstname:"",
+            lastname:"",
+            fullname:""
+        },
+        methods: {
+            
+        },
+        watch: {
+            "firstname":function(newVal,oldVal){
+                this.fullname = newVal + "-" + this.lastname
+            },
+            "lastname":function(newval){
+                this.fullname = this.firstname + this.lastname
+            }
+        },
+    })
+</script>
+</html>

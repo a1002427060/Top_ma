@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="../vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <com2 @transfer-data  ="show">  </com2>
+        </div>
+        <template id="tmp">
+            <div>
+                <h1>这是子组件</h1>
+                <input type="button" value="这是子组件中的按钮 点击将父元素传递过来的 func方法" @click = "myclick">
+            </div>
+        </template>
+        <script>
+            var com2 = {
+                template:"#tmp",
+                data(){
+                    return {
+                        sonmsg:{name:"大头儿子",age:8}
+                    }
+                },
+                methods: {
+                    myclick(){
+                        this.$emit('transfer-data',this.sonmsg)
+                        // this.$emit 接收从父组件中传递过来的事件 ,第二个参数后面都是数据,可以通过调用事件,传递给父组件
+                    }
+                },
+            }
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    datamsgFormSon :"",
+                    
+                },
+                methods:{
+                    show(data){
+                        this.datamsgFormSon = data
+                        console.log(this.datamsgFormSon);
+                        
+                        // alert("父元素的事件")
+                    }
+                },
+                components:{
+                    com2:com2
+                }
+            })
+        </script>
+    </body>
+</html>
